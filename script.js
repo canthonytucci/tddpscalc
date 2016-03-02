@@ -59,12 +59,12 @@ var getVals = function(){
     vals.magazinesize = Number($("#magazinesize").val());
     vals.likelyheadshotchance = Number($("#likelyheadshotchance").val() * 0.01);
 
-
-    var basedmgcalc = (vals.firearmsbuff * (vals.weaponbasedmg / vals.firearmsbuff)) + (vals.magazinedmg * (vals.weaponbasedmg/vals.firearmsbuff)) + vals.glovesdmg;
+    vals.weaponbasedmg = vals.weaponbasedmg/vals.firearmsbuff;
+    var perbulletcalculated = (vals.firearmsbuff * vals.weaponbasedmg) + (vals.weaponbasedmg * vals.magazinedmg) + vals.glovesdmg;
 
     if($("#perbulletdmg").is(":disabled")){
-        vals.perbulletdmg = basedmgcalc;
-        $("#perbulletdmg").val(basedmgcalc);
+        vals.perbulletdmg = perbulletcalculated;
+        $("#perbulletdmg").val(perbulletcalculated);
     }
 
     return vals;
