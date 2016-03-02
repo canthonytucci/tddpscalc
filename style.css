@@ -1,0 +1,25 @@
+html {
+    background: black;
+    color: #fcfcfc;
+  font-family: sans-serif;
+    text-align: center;
+}
+
+.page-heading {
+    color: #FFA500;
+    text-align: center;
+  width: 100%;
+}
+
+.calculation-form {
+   margin: auto;
+    width: 80%;
+}
+
+.calculation-result {
+    marign: auto;
+    width: 80%;
+}
+.video {
+    width: 100%;
+}

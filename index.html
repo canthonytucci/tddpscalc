@@ -1,0 +1,253 @@
+<html>
+  <head>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <link href="bootstrapcyborg.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    
+  </head>
+  <body>
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">The Division DPS Calculator</a>
+    </div>
+           <a class="btn btn-info navbar-btn navbar-right " href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+           <img style="width: 50%; padding-top: 5rem" class="center-block image-responsive" src="img/divisionlogo.png">
+        </div>
+        <div class="col-xs-12 col-md-6">
+           <img style="width: 50%" class="center-block image-responsive" src="img/skilluplogo.png">
+        </div>
+      </div>
+      
+
+      <!--
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/f8u3Bt0mH-s?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          -->
+    <div class="row">
+      <div class="calculation-form">
+        <div class="col-xs-12">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">Step One</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>Enter your stats below. Mouse over the titles to learn how to find these values.</p>
+                </div>
+                <div class="col-xs-12 col-md-6 text-center">
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-warning" id="calcbulletdmgbtn">Calcualte Bullet Dmg</button>
+                    <button type="button" class="btn btn-default" id="enterbulletdmgbtn">Enter Bullet Dmg</button>
+                  </div>
+                </div>
+              <div class="col-xs-12 col-md-6 text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                  Where do I find these numbers?</button>
+              </div>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Weapon Dmg Stat
+                  <input type="number"  class="formulainput form-control" id="weaponbasedmg"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Firearms Buff
+                  <input type="number"class="formulainput form-control" id="firearmsbuff"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Weapon Dmg (Magazine)
+                  <div class="input-group">
+                    <input type="number"class="formulainput form-control" id="magazinedmg"/>
+                    <span class="input-group-addon" id="basic-addon2">%</span>                  
+                  </div>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Gloves Dmg Buff
+                  <input type="number" class="formulainput form-control" id="glovesdmg"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Per Bullet Dmg
+                  <input type="number" class="formulainput form-control" id="perbulletdmg" disabled/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Crit Chance
+                  <div class="input-group">
+                    <input type="number" class="formulainput form-control" id="critchance"/>
+                    <span class="input-group-addon" id="basic-addon2">%</span>                  
+                  </div>
+                </label>
+              </div>
+              
+              <div class="col-xs-12 col-md-3">
+                
+                <label> Crit Bonus Dmg
+                  <div class="input-group">
+                    <input type="number" class="formulainput form-control" id="critdmg"/>
+                    <span class="input-group-addon" id="basic-addon2">%</span>
+                    
+                  </div>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Accuracy
+                  <input type="number" class="formulainput form-control" id="accuracy"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Headshot Bonus Dmg
+                  <div class="input-group">
+                    <input type="number" class="formulainput form-control" id="headshotbonusdmg"/>
+                    <span class="input-group-addon" id="basic-addon2">%</span>
+                    
+                  </div>
+              </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                
+                <label> RPM
+                  <input type="number" class="formulainput form-control" id="rpm"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Reload Time
+                  <input type="number" class="formulainput form-control" id="reloadtime"/>
+                </label>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Magazine Size
+                  <input type="number" class="formulainput form-control" id="magazinesize"/>
+                </label>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title"> Step Two </h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-xs-12 col-md-6">
+                <p>What do you think is your LIKELY headshot chance when using this weapon?</p>
+          
+                
+                <div class="form-group">
+                  <label> Likely Headshot Chance
+                    <div class="input-group">
+                      <input type="number" class="formulainput form-control" id="likelyheadshotchance"/>
+                      <span class="input-group-addon" id="basic-addon2">%</span>          
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6">
+              <h5 class="text-warning">Why do we ask this?</h5>
+              <p>
+                The Division has a funny way of calculating your headshot chance by taking your 'Accuracy' stat and using that as your headshot chance. Since this doesn't make much sense, we let you input it here to better reflect your weapon, playstyle and personal thumb-skill. 
+              </p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="calculation-result col-xs-12">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title"> Results</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="col-xs-12 col-md-4 text-center">
+          <h5>In-game DPS</h5>
+          <h4 class="text-warning"><span id="ingamedpsoutput"></span></h4>
+          <p>This is the DPS that should appear in-game on your character sheet.</p>
+          </div>
+          
+          <div class="col-xs-12 col-md-4 text-center">
+          <h5>Actual HS DPS</h5>
+          <h4 class="text-warning"><span id="actualhschancedpsoutput"></span></h4>
+          <p>Here, we've used the headshot chance you've provided to re-calculate. Everything else is the same</p>
+          </div>
+
+          <div class="col-xs-12 col-md-4 text-center">
+          <h5>Burst DPS</h5>
+          <h4 class="text-warning"><span id="burstdpsoutput"></span></h4>
+          <p> Here we've used the headshot chance you've provided us, and we've also removed the impact of reload speed. This is how much DPS you can put out during a single magazine. </p>
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="page-footer col-xs-12">
+        <p><small>TOM CLANCY'S THE DIVISION IS THE SOLE PROPERTY OF UBISOFT ENTERTAINMENT. ALL RIGHTS RESERVED. TOM CLANCY'S, THE DIVISION LOGO, THE SOLDIER ICON, SNOWDROP, UBISOFT AND THE UBISOFT LOGO ARE TRADEMARKS OF UBISOFT ENTERTAINMENT IN THE U.S. AND/OR OTHER COUNTRIES. 
+        </small></p>
+        <p class="text-center">site by <a href="http://www.modernethic.com">ModernEthic</a></p>
+      </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Where to find these numbers</h4>
+      </div>
+      <div class="modal-body">
+        <dl>
+          <dt>Weapon Dmg</dt>
+            <dd>You can find this value on your character stats sheet under 'Weapon Dmg'. Note: This is NOT your DPS. This is a different number so watch out for this one!</dd>
+
+            <dt>Per bullet dmg</dt>
+              <dd>You can find this value buy shooting an enemy non-armoured, non-elite NPC in the chest from your optimal range (or closer).<dd>
+
+<dt>Firearms buff<dt><dd> You can find this value under the DPS value listed on your character sheet.</dd>
+
+<dt>Weapon Dmg (Magazine)</dt><dd>You can find this value by looking at the ‘All Weapons Damage Increase’ stat on your character stats sheet</dd>
+
+<dt>Gloves Dmg Buff</dt><dd> You can find this value by looking at any weapon damage gained to SPECIFIC weapon types (e.g Shotguns, Assault Rifles, etc.) in your character stats sheet.</dd>
+
+<dt>Crit Chance</dt> <dd>You can find this value on your character stats sheet.</dd>
+
+<dt>Crit Bonus Dmg</dt><dd> You can find this value on your character stats sheet.</dd>
+
+<dt>Accuracy</dt> <dd>You can find this value on your character stats sheet.</dd>
+
+<dt>Headshot Bonus Dmg</dt><dd> You can find this value on your character stats sheet.</dd>
+
+<dt>RPM</dt><dd> You can find this value by inspecting your currently equipped weapon.</dd>
+
+<dt>Reload time</dt> <dd>You can find this value on your character stats sheet.</dd>
+
+<dt>Magazine Size</dt><dd> You can find this value by inspecting your currently equipped weapon.</dd>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
