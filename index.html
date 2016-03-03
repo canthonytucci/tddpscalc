@@ -5,29 +5,38 @@
     <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <style>
+      body, h1, h2, h3, h4, h5  {
+      font-family: 'Titillium Web', sans-serif ! important;
+      }
+    </style>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  </head>
   <body>
 
- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid bg-warning">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">The Division DPS Calculator</a>
     </div>
-           <a class="btn btn-info navbar-btn navbar-right " href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a>
+          
 
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-    <div class="container">
+       
+      </div>
+    </nav>
+    <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 50%; padding-top: 5rem" class="center-block image-responsive" src="divisionlogo.png"></a>
+           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 80%; padding-top: 7.25rem" class="center-block image-responsive" src="divisionlogo.png"></a>
         </div>
         <div class="col-xs-12 col-md-6">
-           <a href="http://www.skill-up.gg"><img style="width: 50%" class="center-block image-responsive" src="skilluplogo.png"></a>
+           <a href="https://www.youtube.com/channel/UCZ7AeeVbyslLM_8-nVy2B8Q"><img style="width: 80%" class="center-block image-responsive" src="skilluplogo.png"></a>
         </div>
       </div>
+     
+
       
 
       <!--
@@ -35,6 +44,13 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/f8u3Bt0mH-s?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
           -->
+      <div class="row">
+         <div class="col-xs-12 text-center">
+           <!-- Button trigger modal -->
+           <p>
+                 <a class="btn btn-primary" href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a></p>
+                 </div>
+</div>
     <div class="row">
       <div class="calculation-form">
         <div class="col-xs-12">
@@ -45,98 +61,94 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-xs-12">
-                  <p>Enter your stats below. Mouse over the titles to learn how to find these values.</p>
+                  <p>Enter your stats below.</p>
                 </div>
                 <div class="col-xs-12 col-md-6 text-center">
+                  <p>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-warning" id="calcbulletdmgbtn">Calcualte Bullet Dmg</button>
+                    <button type="button" class="btn btn-warning" id="calcbulletdmgbtn">Calculate Bullet Dmg</button>
                     <button type="button" class="btn btn-default" id="enterbulletdmgbtn">Enter Bullet Dmg</button>
                   </div>
+                  </p>
+                  </div>
+                   <div class="col-xs-12 col-md-6 text-center">
+                     <p>
+                       <div>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                       Where can I find these numbers?</button></div></p>
+                     
+                 
                 </div>
-              <div class="col-xs-12 col-md-6 text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                  Where do I find these numbers?</button>
+             
               </div>
+              <form>
+                <div class="form-group">
+              <div class="col-xs-12 col-md-3">
+                <label> Weapon Dmg Stat</label>
+                  <input type="text"  class="formulainput form-control" id="weaponbasedmg"/>
+                
               </div>
               <div class="col-xs-12 col-md-3">
-                <label> Weapon Dmg Stat
-                  <input type="number"  class="formulainput form-control" id="weaponbasedmg"/>
-                </label>
-              </div>
-              <div class="col-xs-12 col-md-3">
-                <label> Firearms Buff
-                  <input type="number"class="formulainput form-control" id="firearmsbuff"/>
-                </label>
+                <label> Firearms Buff </label>
+                  <input type="text"class="formulainput form-control" id="firearmsbuff"/>
+               
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Weapon Dmg (Magazine)
-                  <div class="input-group">
-                    <input type="number"class="formulainput form-control" id="magazinedmg"/>
-                    <span class="input-group-addon" id="basic-addon2">%</span>                  
-                  </div>
                 </label>
+                    <input type="text"class="formulainput form-control" placeholder="%" id="magazinedmg"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Gloves Dmg Buff
-                  <input type="number" class="formulainput form-control" id="glovesdmg"/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="glovesdmg"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Per Bullet Dmg
-                  <input type="number" class="formulainput form-control" id="perbulletdmg" disabled/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="perbulletdmg" disabled/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Crit Chance
-                  <div class="input-group">
-                    <input type="number" class="formulainput form-control" id="critchance"/>
-                    <span class="input-group-addon" id="basic-addon2">%</span>                  
-                  </div>
                 </label>
+                    <input placeholder="%" type="text" class="formulainput form-control" id="critchance"/>
               </div>
               
               <div class="col-xs-12 col-md-3">
                 
                 <label> Crit Bonus Dmg
-                  <div class="input-group">
-                    <input type="number" class="formulainput form-control" id="critdmg"/>
-                    <span class="input-group-addon" id="basic-addon2">%</span>
-                    
-                  </div>
                 </label>
+                    <input type="text" class="formulainput form-control" id="critdmg"/>
+                    
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Accuracy
-                  <input type="number" class="formulainput form-control" id="accuracy"/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="accuracy"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Headshot Bonus Dmg
-                  <div class="input-group">
-                    <input type="number" class="formulainput form-control" id="headshotbonusdmg"/>
-                    <span class="input-group-addon" id="basic-addon2">%</span>
-                    
-                  </div>
-              </label>
+                </label>
+                    <input type="text" placeholder="%" class="formulainput form-control" id="headshotbonusdmg"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 
                 <label> RPM
-                  <input type="number" class="formulainput form-control" id="rpm"/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="rpm"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Reload Time
-                  <input type="number" class="formulainput form-control" id="reloadtime"/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="reloadtime"/>
               </div>
               <div class="col-xs-12 col-md-3">
                 <label> Magazine Size
-                  <input type="number" class="formulainput form-control" id="magazinesize"/>
                 </label>
+                  <input type="text" class="formulainput form-control" id="magazinesize"/>
               </div>
-              
+              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -150,13 +162,10 @@
                 <p>What do you think is your LIKELY headshot chance when using this weapon?</p>
           
                 
-                <div class="form-group">
+                <div class="form-group text-center">
                   <label> Likely Headshot Chance
-                    <div class="input-group">
-                      <input type="number" class="formulainput form-control" id="likelyheadshotchance"/>
-                      <span class="input-group-addon" id="basic-addon2">%</span>          
-                    </div>
-                  </label>
+                </label>
+                      <input type="text" placeholder="%" class="formulainput form-control" id="likelyheadshotchance"/>
                 </div>
               </div>
               <div class="col-xs-12 col-md-6">
@@ -178,19 +187,19 @@
 
           <div class="col-xs-12 col-md-4 text-center">
           <h5>In-game DPS</h5>
-          <h4 class="text-warning"><span id="ingamedpsoutput"></span></h4>
+          <h2 class="text-warning"><span id="ingamedpsoutput"></span></h2>
           <p>This is the DPS that should appear in-game on your character sheet.</p>
           </div>
           
           <div class="col-xs-12 col-md-4 text-center">
           <h5>Actual HS DPS</h5>
-          <h4 class="text-warning"><span id="actualhschancedpsoutput"></span></h4>
+          <h2 class="text-warning"><span id="actualhschancedpsoutput"></span></h2>
           <p>Here, we've used the headshot chance you've provided to re-calculate. Everything else is the same</p>
           </div>
 
           <div class="col-xs-12 col-md-4 text-center">
           <h5>Burst DPS</h5>
-          <h4 class="text-warning"><span id="burstdpsoutput"></span></h4>
+          <h2 class="text-warning"><span id="burstdpsoutput"></span></h2>
           <p> Here we've used the headshot chance you've provided us, and we've also removed the impact of reload speed. This is how much DPS you can put out during a single magazine. </p>
           </div>
           </div>
