@@ -29,10 +29,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 80%; padding-top: 7.25rem" class="center-block image-responsive" src="divisionlogo.png"></a>
+           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 60%; padding-top: 7.25rem" class="center-block image-responsive" src="divisionlogo.png"></a>
         </div>
         <div class="col-xs-12 col-md-6">
-           <a href="https://www.youtube.com/channel/UCZ7AeeVbyslLM_8-nVy2B8Q"><img style="width: 80%" class="center-block image-responsive" src="skilluplogo.png"></a>
+           <a href="https://www.youtube.com/channel/UCZ7AeeVbyslLM_8-nVy2B8Q"><img style="width: 60%" class="center-block image-responsive" src="skilluplogo.png"></a>
         </div>
       </div>
      
@@ -45,11 +45,20 @@
           </div>
           -->
       <div class="row">
-         <div class="col-xs-12 text-center">
+         <div class="col-xs-12 col-md-6 text-center">
            <!-- Button trigger modal -->
            <p>
                  <a class="btn btn-primary" href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a></p>
-                 </div>
+         </div>
+         <div class="col-xs-12 col-md-6 text-center">
+                     
+           <div>
+             <p>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                       Where can I find these numbers?</button></p></div>
+                     
+                 
+                </div>
 </div>
     <div class="row">
       <div class="calculation-form">
@@ -60,54 +69,48 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 text-center">
                   <p>Enter your stats below.</p>
                 </div>
-                <div class="col-xs-12 col-md-6 text-center">
+              <!--  <div class="col-xs-12 col-md-6 text-center">
                   <p>
                   <div class="btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-warning" id="calcbulletdmgbtn">Calculate Bullet Dmg</button>
                     <button type="button" class="btn btn-default" id="enterbulletdmgbtn">Enter Bullet Dmg</button>
                   </div>
                   </p>
-                  </div>
-                   <div class="col-xs-12 col-md-6 text-center">
-                     <p>
-                       <div>
-                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                       Where can I find these numbers?</button></div></p>
-                     
-                 
-                </div>
+                  </div> -->
+                   
              
               </div>
               <form>
                 <div class="form-group">
               <div class="col-xs-12 col-md-3">
+                <label> Per Bullet Dmg
+                </label>
+                  <input type="text" class="formulainput form-control" id="perbulletdmg" />
+              </div>
+              <!-- <div class="col-xs-12 col-md-3">
                 <label> Weapon Dmg Stat</label>
                   <input type="text"  class="formulainput form-control" id="weaponbasedmg"/>
                 
-              </div>
+              </div> -->
               <div class="col-xs-12 col-md-3">
-                <label> Firearms Buff </label>
+                <label> Firearms Buff % </label>
                   <input type="text"class="formulainput form-control" id="firearmsbuff"/>
                
               </div>
               <div class="col-xs-12 col-md-3">
-                <label> Weapon Dmg (Magazine)
+                <label>% Weapon Dmg (Magazine)
                 </label>
                     <input type="text"class="formulainput form-control" placeholder="%" id="magazinedmg"/>
               </div>
               <div class="col-xs-12 col-md-3">
-                <label> Gloves Dmg Buff
+                <label>(+) Weapon  Dmg (Gloves)
                 </label>
                   <input type="text" class="formulainput form-control" id="glovesdmg"/>
               </div>
-              <div class="col-xs-12 col-md-3">
-                <label> Per Bullet Dmg
-                </label>
-                  <input type="text" class="formulainput form-control" id="perbulletdmg" disabled/>
-              </div>
+
               <div class="col-xs-12 col-md-3">
                 <label> Crit Chance
                 </label>

@@ -7,11 +7,11 @@ $(document).ready(function(){
         var actualhs = isNaN(actualHsChanceDps(vals).toFixed(2)) ? '*' : actualHsChanceDps(vals).toFixed(2);
         var burst = isNaN(burstDps(vals).toFixed(2)) ? '*' : burstDps(vals).toFixed(2);
 
-        $("#ingamedpsoutput").text(ingame);
-        $("#actualhschancedpsoutput").text(actualhs);
-        $("#burstdpsoutput").text(burst);
+        $("#ingamedpsoutput").text(commafy(ingame));
+        $("#actualhschancedpsoutput").text(commafy(actualhs));
+        $("#burstdpsoutput").text(commafy(burst));
     });
-    $("#calcbulletdmgbtn").click(function(){
+   /* $("#calcbulletdmgbtn").click(function(){
         //update button
         $("#calcbulletdmgbtn").addClass('btn-warning');
         $("#calcbulletdmgbtn").removeClass('btn-default');
@@ -39,6 +39,7 @@ $(document).ready(function(){
         $("#magazinedmg").prop('disabled', true);
         $("#glovesdmg").prop('disabled', true);
     });
+    */
 });
 
 
@@ -70,9 +71,9 @@ var getVals = function(){
     return vals;
 };
 
-var calculateDps = function(){
-    
-};
+var commafy = function(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 var inGameDps = function(vals){
     //(Per bullet dmg + (crit chance  * crit dmg bonus) + (accuracy * hs dmg bonus) + (crit chance * crit dmg bonus * accuracy * hs dmg bonus))
@@ -109,9 +110,9 @@ var burstDps = function(vals){
     var hsbonus = perbulletdmg * vals.likelyheadshotchance * vals.headshotbonusdmg;
     var hscrit = crits * vals.likelyheadshotchance * vals.headshotbonusdmg;
 
-    var numerator = (perbulletdmg + crits + hsbonus + hscrit) * vals.magazinesize;
+    var numerator = (perbulletdmg + crits + hsbonus + hscrit);
 
-    var denominator = vals.magazinesize / (vals.rpm/60);
+    var denominator = vals.magazinesize / vals.magazinesize/(vals.rpm/60);
 
     return numerator/denominator;
 };
