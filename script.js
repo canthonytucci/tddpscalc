@@ -62,10 +62,7 @@ var commafy = function(x) {
 }
 
 var inGameDps = function(vals){
-    //(Per bullet dmg + (crit chance  * crit dmg bonus) + (accuracy * hs dmg bonus) + (crit chance * crit dmg bonus * accuracy * hs dmg bonus))
-    // ALL THAT TIMES MAG SIZE
-    //ALL THAT divided by (Mag size/(rpm/60)+reload time)
-
+    
     var crits = (vals.critchance * vals.critdmg);
     var hsbonus = (vals.perbulletdmg * vals.accuracy * vals.headshotbonusdmg);
     var hscrit =  (vals.critchance * vals.critdmg * vals.accuracy * vals.headshotbonusdmg);
