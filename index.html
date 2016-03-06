@@ -68,9 +68,52 @@
               <h3 class="panel-title">Step One</h3>
             </div>
             <div class="panel-body">
+              <div class="col-xs-12 text-center">
+               <p> Enter your stats from the game below.</p>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label> Per Bullet Dmg
+                </label>
+                  <input type="text" class="precalcformulainput form-control" id="precalcperbulletdmg" />
+              </div>
+              <!-- <div class="col-xs-12 col-md-3">
+                <label> Weapon Dmg Stat</label>
+                  <input type="text"  class="formulainput form-control" id="weaponbasedmg"/>
+                
+              </div> -->
+              <div class="col-xs-12 col-md-3">
+                <label> Firearms Buff % </label>
+                  <input type="text"class="precalcformulainput form-control" id="precalcfirearmsbuff"/>
+               
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label>% Weapon Dmg (Magazine)
+                </label>
+                    <input type="text"class="precalcformulainput form-control" placeholder="%" id="precalcmagazinedmg"/>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label>(+) Weapon  Dmg (Gloves)
+                </label>
+                  <input type="text" class="precalcformulainput form-control" id="precalcglovesdmg"/>
+              </div>
+              <div class="col-xs-12 col-md-3">
+                <label>Weapon Base Dmg (calculated)</label>
+                <input type="text" class="precalcformulainput form-control" id="precalcweaponbasedmg" disabled/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">Step Two</h3>
+            </div>
+            <div class="panel-body">
               <div class="row">
                 <div class="col-xs-12 text-center">
-                  <p>Enter your stats below.</p>
+                  <p>Enter your stats below. You can change the values for firearms buff, magazine % dmg and glove dmg if you want to experiment with how your DPS would change with different gear.</p>
                 </div>
               <!--  <div class="col-xs-12 col-md-6 text-center">
                   <p>
@@ -88,7 +131,7 @@
               <div class="col-xs-12 col-md-3">
                 <label> Per Bullet Dmg
                 </label>
-                  <input type="text" class="formulainput form-control" id="perbulletdmg" />
+                  <input type="text" class="formulainput form-control" id="perbulletdmg" disabled />
               </div>
               <!-- <div class="col-xs-12 col-md-3">
                 <label> Weapon Dmg Stat</label>
