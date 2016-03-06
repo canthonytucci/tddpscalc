@@ -29,10 +29,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 60%; padding-top: 7.25rem" class="center-block image-responsive" src="divisionlogo.png"></a>
+           <a href="http://tomclancy-thedivision.ubi.com/game/en-us/home/index.aspx"><img style="width: 50%; padding-top: 5.75rem" class="center-block image-responsive" src="divisionlogo.png"></a>
         </div>
-        <div class="col-xs-12 col-md-6">
-           <a href="https://www.youtube.com/channel/UCZ7AeeVbyslLM_8-nVy2B8Q"><img style="width: 60%" class="center-block image-responsive" src="skilluplogo.png"></a>
+        <div class="col-xs-12 col-md-6 text-center">
+          <a href="https://www.youtube.com/channel/UCZ7AeeVbyslLM_8-nVy2B8Q"><img style="width: 50%" class="center-block image-responsive" src="skilluplogo.png"></a>
+          <p>
+                 <a class="btn btn-primary" href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a></p>
         </div>
        </div>
      
@@ -47,15 +49,12 @@
       <div class="row">
          <div class="col-xs-12 col-md-6 text-center">
            <!-- Button trigger modal -->
-           <p>
-                 <a class="btn btn-primary" href="https://www.youtube.com/watch?v=f8u3Bt0mH-s"> Learn how DPS works in The Division </a></p>
+           
          </div>
          <div class="col-xs-12 col-md-6 text-center">
                      
            <div>
-             <p>
-                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                       Where can I find these numbers?</button></p></div>
+           </div>
                      
                  
                 </div>
@@ -68,11 +67,20 @@
               <h3 class="panel-title">Step One</h3>
             </div>
             <div class="panel-body">
-              <div class="col-xs-12 text-center">
-               <p> Enter your stats from the game below.</p>
+              <div class="row">
+              <div class="col-xs-12 col-md-9">
+                <p><span class="text-warning">What is this step?</span> The game makes it hard to find your base weapon dmg, so this step helps with that, so you can then tweak your firearms, % weapon dmg and + weapon dmg stats in Step 2. </p>
+               
               </div>
               <div class="col-xs-12 col-md-3">
-                <label> Per Bullet Dmg
+                <p>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                       Where can I find these numbers?</button></p>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-xs-12 col-md-3">
+                <label> Per Bullet Dmg (See Instructions)
                 </label>
                   <input type="text" class="precalcformulainput form-control" id="precalcperbulletdmg" />
               </div>
@@ -100,8 +108,8 @@
                 <label>Weapon Base Dmg (calculated)</label>
                 <input type="text" class="precalcformulainput form-control" id="precalcweaponbasedmg" disabled/>
               </div>
+              </div>
             </div>
-
           </div>
         </div>
 
@@ -112,8 +120,8 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-xs-12 text-center">
-                  <p>Enter your stats below. You can change the values for firearms buff, magazine % dmg and glove dmg if you want to experiment with how your DPS would change with different gear.</p>
+                <div class="col-xs-12">
+                  <p><span class="text-warning">Enter your stats below.</span> You can change the values for firearms buff, magazine % dmg and glove dmg if you want to experiment with how your DPS would change with different gear.</p>
                 </div>
               <!--  <div class="col-xs-12 col-md-6 text-center">
                   <p>
@@ -126,6 +134,7 @@
                    
              
               </div>
+              <div class="row">
               <form>
                 <div class="form-group">
               <div class="col-xs-12 col-md-3">
@@ -164,7 +173,7 @@
                 
                 <label> Crit Bonus Dmg
                 </label>
-                    <input type="text" class="formulainput form-control" id="critdmg"/>
+                    <input type="text" class="formulainput form-control" id="critdmg" placeholder="%" />
                     
               </div>
               <div class="col-xs-12 col-md-3">
@@ -195,17 +204,19 @@
               </div>
               </div>
               </form>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-xs-12">
           <div class="panel panel-warning">
             <div class="panel-heading">
-              <h3 class="panel-title"> Step Two </h3>
+              <h3 class="panel-title"> Step Three</h3>
             </div>
             <div class="panel-body">
+              <div class="row">
               <div class="col-xs-12 col-md-6">
-                <p>What do you think is your LIKELY headshot chance when using this weapon?</p>
+                <p>What do you think is your <span class="text-warning">LIKELY</span> headshot chance when using this weapon?</p>
           
                 
                 <div class="form-group text-center">
@@ -220,7 +231,8 @@
                 The Division has a funny way of calculating your headshot chance by taking your 'Accuracy' stat and using that as your headshot chance. Since this doesn't make much sense, we let you input it here to better reflect your weapon, playstyle and personal thumb-skill. 
               </p>
               </div>
-            </div>
+              </div>
+              </div>
           </div>
       </div>
     </div>
@@ -271,9 +283,6 @@
       </div>
       <div class="modal-body">
         <dl>
-          <dt>Weapon Dmg</dt>
-            <dd>You can find this value on your character stats sheet under 'Weapon Dmg'. Note: This is NOT your DPS. This is a different number so watch out for this one!</dd>
-
             <dt>Per bullet dmg</dt>
               <dd>You can find this value buy shooting an enemy non-armoured, non-elite NPC in the chest from your optimal range (or closer).<dd>
 
