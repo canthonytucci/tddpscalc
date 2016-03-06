@@ -22,7 +22,7 @@ $(document).ready(function(){
         $("#perbulletdmg").prop('disabled', true);
         $("#weaponbasedmg").prop('disabled', false);
         $("#firearmsbuff").prop('disabled', false);
-        $("#magazinedmg").prop('disabled', false);
+        $("#magazinedmg").prop('disabled', false); 
         $("#glovesdmg").prop('disabled', false);
     });
 
@@ -57,7 +57,7 @@ var dothework = function() {
 var getVals = function(){
     var vals = {};
     //get the values from the inputs
-    vals.precalcfirearmsbuff = Number($("#precalcfirearmsbuff").val() * 0.01);
+    vals.precalcfirearmsbuff = (Number($("#precalcfirearmsbuff").val()) + 100) * 0.01;
     vals.precalcmagazinedmg = Number($("#precalcmagazinedmg").val() * 0.01);
     vals.precalcglovesdmg = Number($("#precalcglovesdmg").val());
     vals.preaclcperbulletdmg = Number($("#precalcperbulletdmg").val());
@@ -65,7 +65,7 @@ var getVals = function(){
 
     //afer calc
     // vals.weaponbasedmg = Number($("#weaponbasedmg").val());
-    vals.firearmsbuff = Number($("#firearmsbuff").val() * 0.01);
+vals.firearmsbuff = (Number($("#firearmsbuff").val()) + 100) * 0.01;
     vals.magazinedmg = Number($("#magazinedmg").val() * 0.01);
     vals.glovesdmg = Number($("#glovesdmg").val());
     //vals.perbulletdmg = Number($("#perbulletdmg").val());
