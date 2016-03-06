@@ -1,15 +1,16 @@
 //Listen for changes to anything marked as a formula input
 
 $(document).ready(function(){
+    console.log('here we go');
     $(".formulainput").keyup(function(){
-        var vals = getVals();
-        var ingame = isNaN(inGameDps(vals).toFixed(2)) ? '*' :inGameDps(vals).toFixed(2) ;
-        var actualhs = isNaN(actualHsChanceDps(vals).toFixed(2)) ? '*' : actualHsChanceDps(vals).toFixed(2);
-        var burst = isNaN(burstDps(vals).toFixed(2)) ? '*' : burstDps(vals).toFixed(2);
+        dothework();
+    });
+    $(".precalcformulainput").keyup(function(){
+        $("#firearmsbuff").val($("#precalcfirearmsbuff").val());
+        $("#magazinedmg").val($("#precalcmagazinedmg").val());
+        $("#glovesdmg").val($("#precalcglovesdmg").val());
+        dothework();
 
-        $("#ingamedpsoutput").text(commafy(ingame));
-        $("#actualhschancedpsoutput").text(commafy(actualhs));
-        $("#burstdpsoutput").text(commafy(burst));
     });
    /* $("#calcbulletdmgbtn").click(function(){
         //update button
@@ -42,15 +43,32 @@ $(document).ready(function(){
     */
 });
 
+var dothework = function() {
+    var vals = getVals();
+    var ingame = isNaN(inGameDps(vals).toFixed(2)) ? '*' :inGameDps(vals).toFixed(2) ;
+    var actualhs = isNaN(actualHsChanceDps(vals).toFixed(2)) ? '*' : actualHsChanceDps(vals).toFixed(2);
+    var burst = isNaN(burstDps(vals).toFixed(2)) ? '*' : burstDps(vals).toFixed(2);
+
+    $("#ingamedpsoutput").text(commafy(ingame));
+    $("#actualhschancedpsoutput").text(commafy(actualhs));
+    $("#burstdpsoutput").text(commafy(burst));
+}
 
 var getVals = function(){
     var vals = {};
     //get the values from the inputs
-    vals.weaponbasedmg = Number($("#weaponbasedmg").val());
+    vals.precalcfirearmsbuff = Number($("#precalcfirearmsbuff").val() * 0.01);
+    vals.precalcmagazinedmg = Number($("#precalcmagazinedmg").val() * 0.01);
+    vals.precalcglovesdmg = Number($("#precalcglovesdmg").val());
+    vals.preaclcperbulletdmg = Number($("#precalcperbulletdmg").val());
+
+
+    //afer calc
+    // vals.weaponbasedmg = Number($("#weaponbasedmg").val());
     vals.firearmsbuff = Number($("#firearmsbuff").val() * 0.01);
     vals.magazinedmg = Number($("#magazinedmg").val() * 0.01);
     vals.glovesdmg = Number($("#glovesdmg").val());
-    vals.perbulletdmg = Number($("#perbulletdmg").val());
+    //vals.perbulletdmg = Number($("#perbulletdmg").val());
     vals.critchance = Number($("#critchance").val() * 0.01);
     vals.critdmg = Number($("#critdmg").val() * 0.01);
     vals.accuracy = Number($("#accuracy").val() * 0.001);
@@ -60,14 +78,13 @@ var getVals = function(){
     vals.magazinesize = Number($("#magazinesize").val());
     vals.likelyheadshotchance = Number($("#likelyheadshotchance").val() * 0.01);
 
-    vals.weaponbasedmg = vals.weaponbasedmg/vals.firearmsbuff;
-    var perbulletcalculated = (vals.firearmsbuff * vals.weaponbasedmg) + (vals.weaponbasedmg * vals.magazinedmg) + vals.glovesdmg;
+    vals.weaponbasedmg = (vals.preaclcperbulletdmg/(vals.precalcfirearmsbuff + vals.precalcmagazinedmg)) - vals.precalcglovesdmg;
+    $("#precalcweaponbasedmg").val(vals.weaponbasedmg);
+    var perbulletcalculated = (vals.weaponbasedmg + vals.glovesdmg ) * ( vals.magazinedmg + vals.firearmsbuff);;
 
-    if($("#perbulletdmg").is(":disabled")){
-        vals.perbulletdmg = perbulletcalculated;
-        $("#perbulletdmg").val(perbulletcalculated);
-    }
-
+    vals.perbulletdmg = perbulletcalculated;
+    $("#perbulletdmg").val(perbulletcalculated);
+    
     return vals;
 };
 
