@@ -12,35 +12,7 @@ $(document).ready(function(){
         dothework();
 
     });
-   /* $("#calcbulletdmgbtn").click(function(){
-        //update button
-        $("#calcbulletdmgbtn").addClass('btn-warning');
-        $("#calcbulletdmgbtn").removeClass('btn-default');
-        $("#enterbulletdmgbtn").removeClass('btn-warning');
-        $("#enterbulletdmgbtn").addClass('btn-default');
-
-        $("#perbulletdmg").prop('disabled', true);
-        $("#weaponbasedmg").prop('disabled', false);
-        $("#firearmsbuff").prop('disabled', false);
-        $("#magazinedmg").prop('disabled', false); 
-        $("#glovesdmg").prop('disabled', false);
-    });
-
-    $("#enterbulletdmgbtn").click(function(){
-
-        //update button
-        $("#enterbulletdmgbtn").addClass('btn-warning');
-        $("#enterbulletdmgbtn").removeClass('btn-default');
-        $("#calcbulletdmgbtn").removeClass('btn-warning');
-        $("#calcbulletdmgbtn").addClass('btn-default');
-
-        $("#perbulletdmg").prop('disabled', false);
-        $("#weaponbasedmg").prop('disabled', true);
-        $("#firearmsbuff").prop('disabled', true);
-        $("#magazinedmg").prop('disabled', true);
-        $("#glovesdmg").prop('disabled', true);
-    });
-    */
+ 
 });
 
 var dothework = function() {
@@ -63,12 +35,9 @@ var getVals = function(){
     vals.preaclcperbulletdmg = Number($("#precalcperbulletdmg").val());
 
 
-    //afer calc
-    // vals.weaponbasedmg = Number($("#weaponbasedmg").val());
 vals.firearmsbuff = (Number($("#firearmsbuff").val()) + 100) * 0.01;
     vals.magazinedmg = Number($("#magazinedmg").val() * 0.01);
     vals.glovesdmg = Number($("#glovesdmg").val());
-    //vals.perbulletdmg = Number($("#perbulletdmg").val());
     vals.critchance = Number($("#critchance").val() * 0.01);
     vals.critdmg = Number($("#critdmg").val() * 0.01);
     vals.accuracy = Number($("#accuracy").val() * 0.001);
