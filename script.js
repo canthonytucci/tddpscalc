@@ -128,7 +128,7 @@ var reduxdpscalc = function(valsfromuser) {
     //Over a space of 40.89 bullets (my adjusted mag size)
 
     //I will do a total of  6.29 non crit, non headshots
-    gamehsvals.numnoncritnonhs = gamehsvals.adjnonhspermag - userhsvals.numnonhscrits;
+    gamehsvals.numnoncritnonhs = gamehsvals.adjnonhspermag - gamehsvals.numnonhscrits;
     userhsvals.numnoncritnonhs = userhsvals.adjnonhspermag - userhsvals.numnonhscrits;
 
     //I will do a total of 28.67 non crit headshots
