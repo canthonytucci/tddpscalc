@@ -77,8 +77,21 @@ var reduxdpscalc = function(valsfromuser) {
 
     //The One is None talent buys mean extra 11.89 bullets per magazine
     if(valsfromuser.oneisnone === true){
-        gamehsvals.oneisnoneextra = 0.5 * gamehsvals.hspermag;
-        userhsvals.oneisnoneextra = 0.5 * userhsvals.hspermag;
+
+        var gameadditionalbullets =  0.5 * gamehsvals.accuracy * gamehsvals.magsize; 
+        var useradditionalbullets = 0.5 * userhsvals.accuracy * userhsvals.magsize;
+        var gameaccum =  0.5 * gamehsvals.accuracy * gamehsvals.magsize;
+        var useraccum = 0.5 * userhsvals.accuracy * userhsvals.magsize;;
+
+        for(var i = 0; i < gamehsvals.hspermag; i++){
+            gameaccum = gameaccum * 0.5 * gamehsvals.accuracy;
+            gameadditionalbullets += gameaccum;
+            
+            useraccum = useraccum * 0.5 * userhsvals.accuracy;
+            useradditionalbullets += useraccum;
+        }
+        gamehsvals.oneisnoneextra = gameadditionalbullets;
+        userhsvals.oneisnoneextra = useradditionalbullets;
     } else {
         gamehsvals.oneisnoneextra = 0;
         userhsvals.oneisnoneextra = 0;
